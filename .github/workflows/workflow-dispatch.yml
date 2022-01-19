@@ -12,7 +12,7 @@ jobs:
       - run: |
           curl \
             --request POST \
-            --url https://api.github.com/repos/benhpoh/workflow-dispatch-demo/actions/workflows/18271423/dispatches \
+            --url https://api.github.com/repos/ortelius/ortelius-charts/actions/workflows/helm-indexer.yaml/dispatches \
             --header "authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"ref":"main"}'
