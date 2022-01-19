@@ -16,4 +16,4 @@ jobs:
             --header "authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"ref":"main"}' \
-            --fail-with-body
+            --fail
