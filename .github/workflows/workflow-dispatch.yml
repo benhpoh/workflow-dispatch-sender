@@ -1,0 +1,13 @@
+name: workflow-dispatch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          gh workflow run workflow-dispatch.yml --repo benhpoh/workflow-dispatch-demo
