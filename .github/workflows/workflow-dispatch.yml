@@ -13,6 +13,6 @@ jobs:
           curl \
             --request POST \
             --url https://api.github.com/repos/benhpoh/workflow-dispatch-demo/actions/workflows/workflow-dispatch/dispatches \
-            --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            --header "authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"ref":"main"}'
