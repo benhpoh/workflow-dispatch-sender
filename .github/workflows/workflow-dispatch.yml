@@ -10,4 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          gh workflow run workflow-dispatch.yml --repo benhpoh/workflow-dispatch-demo
+          curl \
+            --request POST \
+            --url https://api.github.com/repos/benhpoh/workflow-dispatch-demo/actions/workflows/workflow-dispatch/dispatches \
+            --header "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            --header "Accept: application/vnd.github.v3+json" \
+            --data '{"ref":"main"}'
