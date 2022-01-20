@@ -6,13 +6,18 @@ on:
       - main
 
 jobs:
-  say_hello:
+  trigger-workflow:
     runs-on: ubuntu-latest
+    env:
+      REPO_OWNER: benhpoh
+      REPO_NAME: ortelius-charts
+      WORKFLOW_FILENAME: helm-indexer.yaml
+      
     steps:
       - run: |
           curl \
             --request POST \
-            --url https://api.github.com/repos/benhpoh/ortelius-charts/actions/workflows/helm-indexer.yaml/dispatches \
+            --url https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/actions/workflows/$WORKFLOW_FILENAME/dispatches \
             --header "authorization: Bearer ${{ secrets.PAT_TOKEN }}" \
             --header "Accept: application/vnd.github.v3+json" \
             --data '{"ref":"main"}' \
