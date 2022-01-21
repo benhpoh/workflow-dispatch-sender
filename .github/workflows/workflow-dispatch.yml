@@ -11,7 +11,7 @@ jobs:
     env:
       REPO_OWNER: benhpoh
       REPO_NAME: workflow-dispatch-receiver
-      WORKFLOW_FILENAME: workflow-dispatch.yaml
+      WORKFLOW_FILENAME: workflow-dispatch.yml
       
     steps:
       - name: trigger-workflow
